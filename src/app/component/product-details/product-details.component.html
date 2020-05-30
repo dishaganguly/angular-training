@@ -1,0 +1,16 @@
+<div class="details-section">
+    <div class="container-fluid">
+        <div class=""  *ngFor="let tempProd of product" style="margin: 100px;">
+           
+           <img src="{{tempProd.imageUrl}}"/>
+           <h4>{{tempProd.name}} </h4> 
+           <div class="price">{{tempProd.unitPrice | currency: 'INR'}}</div>
+           <button href="#" class="btn btn-primary" (click) = "addToCart(tempProd)">Add To Cart</button>
+           <hr/>
+           <h4>Description</h4>
+           <p>{{tempProd.description}}</p>
+           <a routerLink="/products">Back To Product</a>
+        </div>
+        
+    </div>
+</div>

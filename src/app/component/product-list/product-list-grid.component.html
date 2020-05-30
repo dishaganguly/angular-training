@@ -1,0 +1,30 @@
+<div class="main-content">
+    <div class="section-content section-content-p30">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-md-3" *ngFor= "let product of products | paginate:{itemsPerPage:2 , currentPage:page}">
+                    <div class="product-box">
+                        <div>
+                        <a routerLink = "/products/{{ product.id }}">
+                            <img src="{{product.imageUrl}}" class="img-responsive">
+                        </a>
+                    </div>
+                    <div>
+                        <a routerLink = "/products/{{ product.id }}">
+                            <h1>{{ product.name }}</h1>
+                        </a>
+                    </div>
+                            <h2>{{ product.description }} </h2>
+                            <div class="price">{{ product.unitPrice | currency: 'USD' }}</div>
+                            <button class="btn btn-primary" (click)="addToCartProduct(product)">Add to cart</button>
+                    </div>
+                </div>
+                <!---display message if product is not available-->
+                <div *ngIf="products?.length==0" class="col-md-12 alert alert-warning" role="alert">
+                    No product found
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<pagination-controls (pageChange)="page=$event"></pagination-controls>

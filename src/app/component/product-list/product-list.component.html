@@ -1,0 +1,36 @@
+
+<table border="1" class="table">
+    <thead class="thead-dark">
+        <tr>
+            <th>Product Image</th>
+            <th>Name</th>
+            <th>Desc</th>
+            <th>Unit Price</th>
+
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let product of products">
+            <td><img src="{{ product.imageUrl }}" height="50"/></td>
+            <td>{{ product.name }}</td>                                                                        
+            <td>{{ product.description }}</td>                    
+            <td>{{ product.unitPrice }}</td>
+        </tr>
+
+    </tbody>
+</table>
+<div class="container">
+    <div class="product-list">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="col-xs-12 col-md-4" *ngFor="let product of products">
+                    <h3 class="product-name">{{ product.name }}</h3>
+                    <p class="product-desc">{{ product.description }}</p>
+                    <h5 class="product-price">{{ product.unitPrice }}</h5>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          
